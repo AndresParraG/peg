@@ -1,0 +1,8 @@
+<resources>
+    <string name="app_name">peg</string>
+    <string name="empty">empty</string>
+    <string name="peg">peg</string>
+    <string name="restart">restart</string>
+    <string name="moves">Moves:</string>
+    <string name="_0">0</string>
+</resources>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="peg_shape">
+        <item name="android:layout_width">55dp</item>
+        <item name="android:layout_height">55dp</item>
+    </style>
+
+    <style name="void_peg" parent="peg_shape">
+        <item name="android:visibility">gone</item>
+    </style>
+
+    <style name="clickable_peg" parent="peg_shape">
+        <item name="android:onClick">onClick</item>
+    </style>
+</resources>
