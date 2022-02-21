@@ -5,4 +5,6 @@
     <string name="restart">restart</string>
     <string name="moves">Moves:</string>
     <string name="_0">0</string>
+    <string name="pegs_left">Pegs Left:</string>
+    <string name="_32">32</string>
 </resources>

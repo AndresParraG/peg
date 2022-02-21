@@ -6,10 +6,13 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
 
     private PegGame peg;
+    private TextView moveCounter;
+    private TextView pegsCounter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,11 +20,17 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         peg = new PegGame();
+        moveCounter = (TextView) findViewById(R.id.movesCounter);
+        pegsCounter = (TextView) findViewById(R.id.pegsCounter);
     }
 
     public void onClick(View view) {
-        peg.clickPeg(view);
-        update();
+        if (!peg.isWin()) {
+            peg.clickPeg(view);
+            update();
+        } else {
+            Toast.makeText(this, "WIN", Toast.LENGTH_SHORT).show();
+        }
     }
 
     public void reset(View view) {
@@ -42,6 +51,8 @@ public class MainActivity extends AppCompatActivity {
                 }
             }
         }
+        moveCounter.setText(Integer.toString(peg.getMoveCount()));
+        pegsCounter.setText(Integer.toString(peg.getPegsLeft()));
     }
 
     public ImageView getImageViewID(int i, int j) {

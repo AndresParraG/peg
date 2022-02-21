@@ -7,20 +7,45 @@
     tools:context=".MainActivity">
 
     <ImageView
+        android:id="@+id/imageView"
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:contentDescription="@string/restart"
+        android:onClick="reset"
         android:src="@drawable/restart_icon"
         app:layout_constraintBottom_toTopOf="@+id/gridLayout"
-        app:layout_constraintEnd_toStartOf="@+id/textView"
+        app:layout_constraintEnd_toStartOf="@+id/counterText"
         app:layout_constraintHorizontal_bias="0.253"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.48"
-        android:onClick="reset"/>
+        app:layout_constraintVertical_bias="0.48" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/pegsLeft"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/pegs_left"
+        app:layout_constraintBottom_toTopOf="@+id/gridLayout"
+        app:layout_constraintEnd_toStartOf="@+id/counterText"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toEndOf="@+id/imageView"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.471" />
+
+    <TextView
+        android:id="@+id/pegsCounter"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/_32"
+        app:layout_constraintBottom_toTopOf="@+id/gridLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.473"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pegsLeft"
+        app:layout_constraintVertical_bias="0.116" />
+
+    <TextView
+        android:id="@+id/counterText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/moves"
@@ -32,6 +57,7 @@
         app:layout_constraintVertical_bias="0.165" />
 
     <TextView
+        android:id="@+id/movesCounter"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
@@ -40,7 +66,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.761"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
+        app:layout_constraintTop_toBottomOf="@+id/counterText"
         app:layout_constraintVertical_bias="0.0" />
 
     <GridLayout
